@@ -1,0 +1,25 @@
+class Person (
+  val firstName: String,
+  val lastName: String,
+  val age: Int,
+  val occupation: String
+) {
+ 
+  def fullName: String = firstName + " " + lastName
+ 
+  def greet (formal: Boolean): String = {
+    if (formal)
+      "Hello, my name is " + fullName + ". I'm a " + occupation + "."
+    else
+      "Hi, I'm " + firstName + "!"
+  }
+ 
+}
+ 
+val johnSmith = new Person("John", "Smith", 37, "linguist")
+val janeDoe = new Person("Jane", "Doe", 34, "computer scientist")
+val johnDoe = new Person("John", "Doe", 43, "philosopher")
+val kwamiSossoe = new Person("Kwami", "Sossoe", 25, "mathematician")
+ 
+val people = List(johnSmith, janeDoe, johnDoe, kwamiSossoe)
+people.foreach(person => println(person.greet(true)))
